@@ -1,0 +1,22 @@
+body {
+  border: 2px solid brown;
+  color: gray;
+  font-family: sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 170px;
+  width: 350px;
+}
+
+footer {
+  padding-top: 0;
+  font-size: 0.6em;
+}
+
+form {
+  padding-left: 85px;
+}
+
+h1 {
+  padding-left: 30px;
+}
