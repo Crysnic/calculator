@@ -1,7 +1,13 @@
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display);
+html {
+  background-color: white;
+}
+
 body {
-  border: 2px solid brown;
-  color: gray;
-  font-family: sans-serif;
+  box-shadow: 8px 8px 10px #97A597;
+  background-color: #C3DCC2;
+  color: #438F3F;
+  font-family: 'Playfair Display', serif;
   margin: 0 auto;
   padding: 20px;
   margin-top: 170px;
@@ -11,6 +17,7 @@ body {
 footer {
   padding-top: 0;
   font-size: 0.6em;
+  font-weight: bold;
 }
 
 form {
@@ -18,5 +25,6 @@ form {
 }
 
 h1 {
-  padding-left: 30px;
+  padding-left: 40px;
+  font-size: 2.2em;
 }

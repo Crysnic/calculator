@@ -1,43 +1,27 @@
 function Calculator() {
-  var options = {
-    "+": function(a, b) {return a+b;},
-    "-": function(a, b) {return a-b;},
-    "*": function(a, b) {return a*b},
-    "/": function(a, b) {return a/b},
-    "=": function(a, b) {return a == b ? 0 : -1;} 
-  };
   var expression = document.getElementById('expr').value;
 
   this.calculate = function() {
-    var values = parseStrExpr(expression);
-    
-    if(!isNumeric(values.value1) || !isNumeric(values.value2)) {
-      alert("Error: wrong entry");
-      return this;
-    }
-    
-    var optn = values.option;
-    var a = +values.value1;
-    var b = +values.value2;
-
-    for (var key in options) {
-      if(key == optn) {
-        var result = options[key](a, b);
-        alert(result);
-        return this;
+    try {
+      expression = parseStrExpr(expression);
+      var result = (new Function("", "return " + expression))();
+      if(!isNumeric(result)) {
+        throw {message: "Невозможная операция", name: "Error"};
       }
+      alert(result);
+      return this;
+
+    } catch(e) {
+      alert("Name: " + e.name + "\nMessage: " + e.message);
     }
-    alert("Error: Unknown option \"" + optn + "\"");
-    return this;
   }
 }
 
 function parseStrExpr(str) {
-  var value1 = /^\s*\d+/.exec(str);
-  var value2 = /\s*\d+$/.exec(str);
-  var option = /[^0-9a-zA-Z ]+/.exec(str);
+  var regstr = /(cos|sin|tan|acos|asin|atan|log|pow|sqrt)/ig;
+  var result = str.replace(regstr, "Math.$1");
   
-  return {"value1": value1, "value2": value2, "option": option};
+  return result; 
 }
 
 function isNumeric(n) {
