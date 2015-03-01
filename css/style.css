@@ -8,6 +8,7 @@ body {
   background-color: #C3DCC2;
   color: #438F3F;
   font-family: 'Playfair Display', serif;
+  text-align: center;
   margin: 0 auto;
   padding: 20px;
   margin-top: 170px;
@@ -16,15 +17,17 @@ body {
 
 footer {
   padding-top: 0;
+  text-align: left;
   font-size: 0.6em;
   font-weight: bold;
 }
 
-form {
-  padding-left: 85px;
+h1 {
+  font-size: 2.2em;
 }
 
-h1 {
-  padding-left: 40px;
-  font-size: 2.2em;
+.errorMessage {
+  text-align: left;
+  color: red;
+  font-size: 15px;
 }

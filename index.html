@@ -1,18 +1,21 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Calculator</title>
-
   <script type="text/javascript" src="js/index.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
   <h1>Simple calculator</h1>
   
   <form>
-    <input type="text" id="expr" value="cos(12)">
-    <input type="button" value="=" id="butn" onclick="new Calculator().calculate()">
+    <input type="text" id="expr" value="0" onClick="this.select()"/>
+    <input type="button" value="=" 
+      onclick="new Calculator().calculate()"/>
+    <div class="errorMessage">
+      <p></p>
+    </div>
   </form>
   <footer>v0.0.3</footer>
 </body>
