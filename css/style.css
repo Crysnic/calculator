@@ -1,18 +1,40 @@
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display);
+
 html {
   background-color: white;
 }
 
 body {
   box-shadow: 8px 8px 10px #97A597;
-  background-color: #C3DCC2;
-  color: #438F3F;
+  background-color: #eee;
+  color: #988;
   font-family: 'Playfair Display', serif;
   text-align: center;
   margin: 0 auto;
   padding: 20px;
   margin-top: 170px;
   width: 350px;
+}
+
+.display {
+  width: 297px;
+  height: 30px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  padding-right: 5px;
+  text-align: right;
+  line-height: 30px;
+  font-size: 1em;
+}
+
+input[type=button] {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 70px;
+  height: 30px;
+  font-size: 1em;
+  text-align: center;
+  color: #6666aa;
 }
 
 footer {
@@ -24,6 +46,7 @@ footer {
 
 h1 {
   font-size: 2.2em;
+  margin-bottom: 20px;
 }
 
 .errorMessage {

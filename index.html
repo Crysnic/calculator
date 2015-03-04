@@ -4,19 +4,50 @@
   <meta charset="utf-8"/>
   <title>Calculator</title>
   <script type="text/javascript" src="js/index.js"></script>
+  <link rel="stylesheet" href="css/reset.css"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <h1>Simple calculator</h1>
-  
+  <h1>Simple calculator</h1> 
   <form>
-    <input type="text" id="expr" value="0" onClick="this.select()"/>
-    <input type="button" value="=" 
-      onclick="new Calculator().calculate()"/>
-    <div class="errorMessage">
-      <p></p>
+    <div>
+      <input value="" id="display" class="display" readonly>
+    </div>
+    <div>
+      <input type="button" value="7" onclick="sendValue(7)">
+      <input type="button" value="8" onclick="sendValue(8)">
+      <input type="button" value="9" onclick="sendValue(9)">
+      <input type="button" value="/" onclick="sendValue('/')">
+    </div>
+    <div>
+      <input type="button" value="4" onclick="sendValue(4)">
+      <input type="button" value="5" onclick="sendValue(5)">
+      <input type="button" value="6" onclick="sendValue(6)">
+      <input type="button" value="*" onclick="sendValue('*')">
+    </div>
+    <div>
+      <input type="button" value="1" onclick="sendValue(1)">
+      <input type="button" value="2" onclick="sendValue(2)">
+      <input type="button" value="3" onclick="sendValue(3)">
+      <input type="button" value="-" onclick="sendValue('-')">
+    </div>
+    <div>
+      <input type="button" value="0" onclick="sendValue(0)">
+      <input type="button" value="." onclick="sendValue('.')">
+      <input type="button" value="%" onclick="sendValue('%')">
+      <input type="button" value="+" onclick="sendValue('+')">
+    </div>
+    <div class="result">
+      <input type="button" value="<-" onclick="deleteCharacter()">
+      <input type="button" value="C" onclick="cleanDisplay()">
+      <input type="button" value="=" onclick="calculate()">
     </div>
   </form>
-  <footer>v0.0.3</footer>
+  
+  <div class="errorMessage" id="errorMessage">
+    <p></p>
+  </div>
+  
+  <footer>v0.0.4</footer>
 </body>
 </html>
