@@ -1,3 +1,4 @@
+
 // Отправить символ на дисплей
 function sendValue(val) {
   var display = document.getElementById("display");
@@ -21,9 +22,17 @@ function calculate() {
     }
     
     document.getElementById('display').value = result;
-    errElem.children[0].innerHTML = "";
+    
+    // удалить errorMessage element если есть
+    if(errElem) {
+    	errElem.parentNode.removeChild(errElem);
+    }
     
   } catch (e) {
+    var error = document.createElement("div");
+    error.className = "errorMessage";
+    error.id = "errorMessage";   
+  
     // любая другая ошибка
     if (e.name !== "Error") {
       var errMessage = e.name + ": Некорректное выражение";
@@ -31,7 +40,8 @@ function calculate() {
       errMessage = e.name + ": " + e.message;
     }
     
-    errElem.children[0].innerHTML = errMessage;
+    error.innerHTML = errMessage;
+    document.body.appendChild(error);
   }
 }
 
@@ -46,13 +56,21 @@ function deleteCharacter() {
   }
   
   display.value = expressionArray.join('');
-  document.getElementById("errorMessage").children[0].innerHTML = "";
+  
+  // удалить errorMessage element если есть
+  if ( document.getElementById("errorMessage") ) {
+    document.getElementById("errorMessage").parentNode.removeChild(document.getElementById("errorMessage"));
+  }
 }
 
 // Очистка дисплея
 function cleanDisplay() {
   document.getElementById("display").value = "";
-  document.getElementById("errorMessage").children[0].innerHTML = "";
+  
+  // удалить errorMessage element если есть
+  if ( document.getElementById("errorMessage") ) {
+    document.getElementById("errorMessage").parentNode.removeChild(document.getElementById("errorMessage"));
+  }
 }
 
 // Internal Functions------------------------------------------------

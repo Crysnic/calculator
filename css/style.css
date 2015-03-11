@@ -4,7 +4,7 @@ html {
   background-color: white;
 }
 
-body {
+.calculator {
   box-shadow: 8px 8px 10px #97A597;
   background-color: #eee;
   color: #988;
@@ -44,13 +44,45 @@ footer {
   font-weight: bold;
 }
 
-h1 {
+.calculator h1 {
   font-size: 2.2em;
   margin-bottom: 20px;
 }
 
 .errorMessage {
-  text-align: left;
+  width: 250px;
+  border: 1px solid red;
+  padding: 5px;
+  text-align: center;
   color: red;
   font-size: 15px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+.available_functions {
+  width: 170px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 10px 0;
+}
+.AVhover {
+  border: 1px solid gray;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #eee;
+}
+.AVhover:hover {
+  background-color: #ddd;
+}
+.AVhover:active {
+  background-color: #ccc;
+}
+.available_functions table {
+  margin-top: 10px;
+}
+.available_functions th {
+  padding-right: 5px;
 }
