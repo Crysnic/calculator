@@ -13,13 +13,13 @@ html {
   margin: 0 auto;
   padding: 20px;
   margin-top: 170px;
-  width: 350px;
+  width: 355px;
 }
 
 .display {
-  width: 297px;
+  width: 325px;
   height: 30px;
-  margin-left: 5px;
+  margin-left: 2px;
   margin-bottom: 10px;
   padding-right: 5px;
   text-align: right;
@@ -28,10 +28,10 @@ html {
 }
 
 input[type=button] {
-  margin-top: 5px;
+  margin-top: 10px;
   margin-left: 5px;
-  width: 70px;
-  height: 30px;
+  width: 60px;
+  height: 25px;
   font-size: 1em;
   text-align: center;
   color: #6666aa;
@@ -42,11 +42,30 @@ footer {
   text-align: left;
   font-size: 0.6em;
   font-weight: bold;
+  margin-top: 20px;
 }
 
 .calculator h1 {
   font-size: 2.2em;
   margin-bottom: 20px;
+}
+.rightFloat {
+  float: right;
+  width: 60px;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.result {
+  margin-right: 10px;
+}
+.rightFloat input[type=button] {
+  margin: 0 0 10px 0;
+}
+.result input[value='='] {
+  height: 60px;
 }
 
 .errorMessage {

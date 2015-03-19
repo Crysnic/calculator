@@ -8,40 +8,42 @@
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <div class=calculator>
+  <div class="calculator">
     <h1>Simple calculator</h1> 
     <form>
       <div>
         <input value="" id="display" class="display" readonly>
       </div>
-      <div>
-        <input type="button" value="7" onclick="sendValue(7)">
-        <input type="button" value="8" onclick="sendValue(8)">
-        <input type="button" value="9" onclick="sendValue(9)">
-        <input type="button" value="/" onclick="sendValue('/')">
+      <div class="rightFloat result">
+        <input type="button" value="<-">
+        <input type="button" value="C">
+        <input type="button" value="=">
+      </div>
+      <div class="rightFloat">
+        <input type="button" value="+">
+        <input type="button" value="-">
+        <input type="button" value="*">
+        <input type="button" value="/">
       </div>
       <div>
-        <input type="button" value="4" onclick="sendValue(4)">
-        <input type="button" value="5" onclick="sendValue(5)">
-        <input type="button" value="6" onclick="sendValue(6)">
-        <input type="button" value="*" onclick="sendValue('*')">
+        <input type="button" value="7">
+        <input type="button" value="8">
+        <input type="button" value="9">
       </div>
       <div>
-        <input type="button" value="1" onclick="sendValue(1)">
-        <input type="button" value="2" onclick="sendValue(2)">
-        <input type="button" value="3" onclick="sendValue(3)">
-        <input type="button" value="-" onclick="sendValue('-')">
+        <input type="button" value="4">
+        <input type="button" value="5">
+        <input type="button" value="6">
       </div>
       <div>
-        <input type="button" value="0" onclick="sendValue(0)">
-        <input type="button" value="." onclick="sendValue('.')">
-        <input type="button" value="%" onclick="sendValue('%')">
-        <input type="button" value="+" onclick="sendValue('+')">
+        <input type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
       </div>
-      <div class="result">
-        <input type="button" value="<-" onclick="deleteCharacter()">
-        <input type="button" value="C" onclick="cleanDisplay()">
-        <input type="button" value="=" onclick="calculate()">
+      <div>
+        <input type="button" value="0">
+        <input type="button" value=".">
+        <input type="button" value="%">
       </div>
     </form>
     <footer>v0.0.4</footer>
@@ -58,14 +60,5 @@
     </table>
   </div>
   
-  <script type="text/javascript">
-    //вывести доступные функции в левый верхний угол
-    document.getElementById("signs").style.display = "none";
-    
-    document.getElementsByClassName('available_functions')[0].onclick = function() {
-      document.getElementById("signs").style.display =
-        document.getElementById("signs").style.display == "none" ? "" : "none";
-    }
-  </script>
 </body>
 </html>

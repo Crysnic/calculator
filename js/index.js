@@ -1,3 +1,52 @@
+window.onload = function() {
+  var calculator = document.getElementsByClassName("calculator")[0];
+
+  // делегирование
+  calculator.onclick = function(event) {
+    var target = event.target;
+    if (target.type != "button") return;
+
+    switch (target.value) {
+      case '=':
+        calculate();
+        return;
+      case '<-':
+        deleteCharacter();
+        return;
+      case 'C':
+        cleanDisplay();
+        return;
+    }
+    
+    sendValue(target.value);
+  }
+
+  //вывести доступные функции в левый верхний угол
+  var availableFunctionsButton =
+    document.getElementsByClassName('available_functions')[0];
+  var availableFunctionsList = document.getElementById("signs");
+  
+  availableFunctionsList.style.display = "none";
+    
+  availableFunctionsButton.onclick = function() {
+    availableFunctionsList.style.display =
+      availableFunctionsList.style.display ? "" : "none";
+  }
+
+  // отмена действий браузера по-умолчанию(выделение текста)
+  var header = calculator.getElementsByTagName('h1')[0];
+  var footer = calculator.getElementsByTagName('footer')[0];
+
+  availableFunctionsButton.onmousedown = function() {
+    return false;
+  }
+  header.onmousedown = function() {
+    return false;
+  }
+  footer.onmousedown = function() {
+    return false;
+  }
+}
 
 // Отправить символ на дисплей
 function sendValue(val) {
